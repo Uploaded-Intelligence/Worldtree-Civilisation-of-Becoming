@@ -1,0 +1,39 @@
+name: control-plane
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+      - name: Verify required project state
+        shell: bash
+        run: |
+          set -euo pipefail
+          for path in \
+            AGENTS.md \
+            docs/WINNING.md \
+            docs/PROGRESS.md \
+            docs/DECISIONS.md \
+            docs/RISKS.md \
+            docs/ARCHITECTURE.md \
+            docs/ROADMAP.md \
+            docs/RUNBOOK.md \
+            docs/REVIEW.md; do
+            test -s "$path"
+          done
+      - name: Test publication policy
+        run: node --test tests/control-plane/*.test.mjs
+      - name: Scan public repository
+        run: node scripts/check-public-repo.mjs
+      - name: Verify committed-tree whitespace
+        run: git show --check --oneline HEAD

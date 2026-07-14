@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worldtree Civilisation — spatial architecture study</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #07110f;
+      --foreground: #edf8ef;
+      --muted: #40554e;
+      --muted-foreground: #9bb2a8;
+      --viz-series-1: #73d69e;
+      --viz-series-2: #e8c96b;
+      --viz-series-3: #9c8cff;
+      --viz-series-4: #ff9874;
+      --viz-series-5: #d8f5ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 20%, #16362d 0, var(--background) 58%);
+      color: var(--foreground);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(920px, 100%); margin: 0 auto; padding: 32px 18px 48px; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.5rem, 4vw, 2.4rem); }
+    .study-note { margin: 0 0 24px; color: var(--muted-foreground); line-height: 1.5; }
+    .viz-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn {
+      border: 1px solid color-mix(in srgb, var(--foreground) 28%, transparent);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: color-mix(in srgb, var(--background) 72%, transparent);
+      color: var(--foreground);
+      cursor: pointer;
+      font: inherit;
+    }
+    .btn:hover { border-color: var(--viz-series-2); }
+    .btn:focus-visible { outline: 3px solid var(--viz-series-5); outline-offset: 3px; }
+    .btn-primary { background: var(--viz-series-1); border-color: var(--viz-series-1); color: #06120c; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Worldtree Civilisation</h1>
+  <p class="study-note">A preserved comparative design study. Option C is the selected project direction; the controls remain available to inspect the rejected alternatives.</p>
+<div id="becoming-world-architecture">
+  <style>
+    #becoming-world-architecture .world-controls { margin-bottom: 12px; }
+    #becoming-world-architecture .world-frame { position: relative; width: 100%; }
+    #becoming-world-architecture .world-frame svg { display: block; width: 100%; height: auto; color: var(--foreground); }
+    #becoming-world-architecture .world-option { display: none; }
+    #becoming-world-architecture .world-option.is-active { display: block; }
+    #becoming-world-architecture .ground { fill: color-mix(in srgb, var(--muted) 38%, transparent); }
+    #becoming-world-architecture .actual { fill: none; stroke: var(--viz-series-1); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+    #becoming-world-architecture .actual-thin { fill: none; stroke: var(--viz-series-1); stroke-width: 3; stroke-linecap: round; }
+    #becoming-world-architecture .possible { fill: none; stroke: var(--viz-series-2); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 5 7; }
+    #becoming-world-architecture .entangled { fill: none; stroke: var(--viz-series-3); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 2 5; }
+    #becoming-world-architecture .district { fill: color-mix(in srgb, var(--viz-series-1) 15%, transparent); stroke: var(--viz-series-1); stroke-width: 1.5; }
+    #becoming-world-architecture .possibility-field { fill: color-mix(in srgb, var(--viz-series-2) 10%, transparent); stroke: var(--viz-series-2); stroke-width: 1; stroke-dasharray: 4 6; }
+    #becoming-world-architecture .artifact { fill: var(--viz-series-4); stroke: var(--background); stroke-width: 2; }
+    #becoming-world-architecture .horizon { fill: var(--viz-series-5); }
+    #becoming-world-architecture .spark { fill: var(--viz-series-2); opacity: .78; }
+    #becoming-world-architecture .label { fill: var(--foreground); font-weight: 500; }
+    #becoming-world-architecture .hint { fill: var(--muted-foreground); }
+    #becoming-world-architecture .choice-line { min-height: 24px; margin: 10px 0 12px; color: var(--muted-foreground); }
+    @media (max-width: 520px) {
+      #becoming-world-architecture .world-frame svg { min-height: 330px; }
+    }
+  </style>
+
+  <div class="viz-controls world-controls" aria-label="World architecture options">
+    <button type="button" class="btn" data-world="a">A · Sacred Tree</button>
+    <button type="button" class="btn" data-world="b">B · Living Districts</button>
+    <button type="button" class="btn btn-primary" data-world="c" aria-pressed="true">C · Worldtree Civilisation</button>
+  </div>
+
+  <div class="world-frame">
+    <svg viewBox="0 0 720 360" role="img" aria-labelledby="world-title world-desc">
+      <title id="world-title">Three spatial architectures for the Game of Becoming</title>
+      <desc id="world-desc">Switch between a single sacred tree, a district-based civilisation, and a hybrid worldtree civilisation with campaigns, actual growth, and surrounding possibility branches.</desc>
+
+      <g class="world-option" data-option="a">
+        <ellipse class="ground" cx="360" cy="322" rx="270" ry="25"></ellipse>
+        <path class="actual" d="M360 320 C354 270 360 218 360 158"></path>
+        <path class="actual" d="M360 238 C310 218 276 180 248 134"></path>
+        <path class="actual-thin" d="M308 211 C274 216 238 204 206 178"></path>
+        <path class="actual" d="M360 214 C410 192 446 155 472 112"></path>
+        <path class="actual-thin" d="M422 177 C456 180 493 164 523 134"></path>
+        <path class="possible" d="M248 134 C218 105 184 84 147 73"></path>
+        <path class="possible" d="M472 112 C502 78 535 59 575 51"></path>
+        <path class="possible" d="M360 158 C358 116 365 79 385 43"></path>
+        <circle class="artifact" cx="274" cy="181" r="8"></circle>
+        <circle class="artifact" cx="447" cy="154" r="8"></circle>
+        <circle class="artifact" cx="360" cy="157" r="8"></circle>
+        <circle class="horizon" cx="385" cy="34" r="7"></circle>
+        <text class="label" x="388" y="335" text-anchor="middle">One continuous identity-rich world-tree</text>
+        <text class="hint" x="147" y="57" text-anchor="middle">spectral possibility</text>
+        <text class="hint" x="575" y="37" text-anchor="middle">future branch</text>
+        <text class="hint" x="244" y="247" text-anchor="middle">captured empirics</text>
+      </g>
+
+      <g class="world-option" data-option="b">
+        <ellipse class="ground" cx="360" cy="320" rx="310" ry="27"></ellipse>
+        <circle class="district" cx="182" cy="220" r="72"></circle>
+        <circle class="district" cx="360" cy="168" r="86"></circle>
+        <circle class="district" cx="548" cy="226" r="67"></circle>
+        <path class="entangled" d="M245 202 C285 174 304 170 322 169"></path>
+        <path class="entangled" d="M437 187 C472 204 488 214 500 220"></path>
+        <path class="possible" d="M232 273 C274 313 315 316 347 292"></path>
+        <circle class="possibility-field" cx="370" cy="278" r="42"></circle>
+        <path class="actual-thin" d="M182 246 L182 190 M182 211 L159 192 M182 203 L204 182"></path>
+        <path class="actual-thin" d="M360 208 L360 122 M360 169 L326 142 M360 155 L397 126"></path>
+        <path class="actual-thin" d="M548 251 L548 199 M548 225 L523 207 M548 216 L574 195"></path>
+        <circle class="artifact" cx="159" cy="192" r="7"></circle>
+        <circle class="artifact" cx="397" cy="126" r="7"></circle>
+        <circle class="artifact" cx="574" cy="195" r="7"></circle>
+        <circle class="horizon" cx="360" cy="51" r="8"></circle>
+        <text class="label" x="182" y="302" text-anchor="middle">Friendship district</text>
+        <text class="label" x="360" y="91" text-anchor="middle">Creative district</text>
+        <text class="label" x="548" y="302" text-anchor="middle">Exploration district</text>
+        <text class="hint" x="370" y="282" text-anchor="middle">new district seed</text>
+      </g>
+
+      <g class="world-option is-active" data-option="c">
+        <ellipse class="ground" cx="360" cy="322" rx="320" ry="28"></ellipse>
+        <circle class="possibility-field" cx="360" cy="182" r="150"></circle>
+        <path class="entangled" d="M196 272 C262 314 319 305 355 264 C394 306 471 314 533 273"></path>
+        <path class="entangled" d="M226 263 C276 249 307 245 348 259"></path>
+        <path class="entangled" d="M365 259 C411 242 462 248 507 263"></path>
+
+        <circle class="district" cx="194" cy="249" r="61"></circle>
+        <path class="actual" d="M194 284 C192 250 194 220 194 184"></path>
+        <path class="actual-thin" d="M194 234 C166 220 150 201 140 181"></path>
+        <path class="actual-thin" d="M194 220 C218 207 233 191 245 170"></path>
+        <path class="possible" d="M140 181 C122 153 101 140 76 134"></path>
+        <circle class="artifact" cx="140" cy="181" r="7"></circle>
+        <text class="label" x="194" y="329" text-anchor="middle">Belonging campaign</text>
+
+        <circle class="district" cx="360" cy="225" r="73"></circle>
+        <path class="actual" d="M360 276 C358 229 360 190 360 142"></path>
+        <path class="actual-thin" d="M360 218 C327 200 310 177 300 149"></path>
+        <path class="actual-thin" d="M360 197 C390 181 408 161 420 135"></path>
+        <path class="possible" d="M300 149 C282 116 254 95 225 84"></path>
+        <path class="possible" d="M420 135 C446 104 475 88 507 81"></path>
+        <circle class="artifact" cx="300" cy="149" r="7"></circle>
+        <circle class="artifact" cx="420" cy="135" r="7"></circle>
+        <text class="label" x="360" y="314" text-anchor="middle">Music campaign</text>
+
+        <circle class="district" cx="530" cy="252" r="58"></circle>
+        <path class="actual" d="M530 285 C530 253 530 226 530 196"></path>
+        <path class="actual-thin" d="M530 237 C505 225 490 209 479 190"></path>
+        <path class="possible" d="M530 211 C555 194 573 174 582 151"></path>
+        <circle class="artifact" cx="479" cy="190" r="7"></circle>
+        <text class="label" x="530" y="329" text-anchor="middle">Venture campaign</text>
+
+        <circle class="horizon" cx="360" cy="42" r="8"></circle>
+        <circle class="horizon" cx="253" cy="60" r="5"></circle>
+        <circle class="horizon" cx="478" cy="58" r="5"></circle>
+        <path class="possible" d="M360 142 C361 106 361 78 360 54"></path>
+        <circle class="spark" cx="94" cy="94" r="3"></circle>
+        <circle class="spark" cx="126" cy="112" r="2"></circle>
+        <circle class="spark" cx="594" cy="108" r="3"></circle>
+        <circle class="spark" cx="624" cy="139" r="2"></circle>
+        <text class="hint" x="360" y="25" text-anchor="middle">World Horizons · attractors, not final victory</text>
+        <text class="hint" x="633" y="177" text-anchor="middle">possibility-space</text>
+        <text class="hint" x="360" y="344" text-anchor="middle">mycorrhizal entanglement across campaigns</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="choice-line" aria-live="polite">C · A vast possibility field containing multiple living Campaign districts, joined through one evolving civilisation.</div>
+
+  <button type="button" class="btn btn-primary" id="choose-world">Choose Worldtree Civilisation</button>
+
+  <script>
+    (() => {
+      const root = document.getElementById('becoming-world-architecture');
+      const descriptions = {
+        a: 'A · One iconic sacred tree. Powerful continuity, but Campaigns can blur into a single life-progression hierarchy.',
+        b: 'B · A civilisation of separate organic districts. Strong spatial growth, but the lineage and Tree metaphor become secondary.',
+        c: 'C · A vast possibility field containing multiple living Campaign districts, joined through one evolving civilisation.'
+      };
+      const names = { a: 'Sacred Tree', b: 'Living Districts', c: 'Worldtree Civilisation' };
+      let selected = 'c';
+      const line = root.querySelector('.choice-line');
+      const choose = root.querySelector('#choose-world');
+
+      root.querySelectorAll('[data-world]').forEach((button) => {
+        button.addEventListener('click', () => {
+          selected = button.dataset.world;
+          root.querySelectorAll('[data-world]').forEach((peer) => {
+            const active = peer.dataset.world === selected;
+            peer.classList.toggle('btn-primary', active);
+            peer.setAttribute('aria-pressed', String(active));
+          });
+          root.querySelectorAll('[data-option]').forEach((group) => {
+            group.classList.toggle('is-active', group.dataset.option === selected);
+          });
+          line.textContent = descriptions[selected];
+          choose.textContent = `Choose ${names[selected]}`;
+        });
+      });
+
+      choose.addEventListener('click', () => {
+        line.textContent = `${names[selected]} selected for this local design study. The ratified project direction remains Worldtree Civilisation.`;
+      });
+    })();
+  </script>
+</div>
+</main>
+</body>
+</html>
