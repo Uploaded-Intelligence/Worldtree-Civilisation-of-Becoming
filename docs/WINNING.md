@@ -42,18 +42,18 @@ Separation wins when:
 
 ## Acceptance Criteria
 
-- [ ] The canonical control-plane documents exist and contain substantive,
+- [x] The canonical control-plane documents exist and contain substantive,
       mutually consistent project truth.
-- [ ] The repository uses the exact Uploaded-Intelligence Git identity and the
+- [x] The repository uses the exact Uploaded-Intelligence Git identity and the
       intended Worldtree GitHub remote.
-- [ ] README and architecture state that no playable system exists yet.
-- [ ] The ownership boundary between Worldtree and Intersectionalities is
+- [x] README and architecture state that no playable system exists yet.
+- [x] The ownership boundary between Worldtree and Intersectionalities is
       decision-complete.
-- [ ] Model-routing doctrine reserves expensive reasoning for measured need.
-- [ ] The chosen Worldtree visual study and a distilled design brief are present.
-- [ ] The continuation brief gives the next Codex task a deterministic starting
+- [x] Model-routing doctrine reserves expensive reasoning for measured need.
+- [x] The chosen Worldtree visual study and a distilled design brief are present.
+- [x] The continuation brief gives the next Codex task a deterministic starting
       sequence.
-- [ ] Verification and independent review report no blocking findings.
+- [x] Verification and independent review report no blocking findings.
 
 ## Verification Evidence
 

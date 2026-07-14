@@ -54,4 +54,16 @@ Final independent verdicts:
 - Spec compliance: **PASS — no blocking findings**.
 - Quality and safety: **PASS — no blocking or important findings**.
 
-Public-remote and commit-identity evidence will be appended after publication.
+### Publication evidence
+
+- Root commit: `c7a6ae51d07abd56420c70eb610145ebfcdef8c3`.
+- Author and committer: `Uploaded-Intelligence
+  <148705917+Uploaded-Intelligence@users.noreply.github.com>`.
+- Public repository:
+  <https://github.com/Uploaded-Intelligence/Worldtree-Civilisation-of-Becoming>.
+- Control-plane CI:
+  <https://github.com/Uploaded-Intelligence/Worldtree-Civilisation-of-Becoming/actions/runs/29296389916>
+  completed successfully.
+- `main` protection was verified through the GitHub API with strict required
+  status `verify`, PR review flow, resolved conversations, linear history,
+  administrator enforcement, and force-push/deletion disabled.
