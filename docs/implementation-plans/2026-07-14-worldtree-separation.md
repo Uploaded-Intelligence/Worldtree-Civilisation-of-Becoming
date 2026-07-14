@@ -1,6 +1,6 @@
 # Worldtree Repository Separation Plan
 
-Status: locally verified and independently reviewed; publication pending
+Status: complete — verified, reviewed, published, and protected
 Date: 2026-07-14
 
 ## Goal
